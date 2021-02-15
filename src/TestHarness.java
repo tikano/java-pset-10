@@ -10,8 +10,8 @@ public class TestHarness {
         boolean b = false;
         int i = 0;
 
-        int[] input1 = {10, 0, 0, -10};
-        int[] input2 = {1, 2, 3};
+        int[] input1 = {1, 2, 3, 4};
+        int[] input2 = {1, 4};
 
         int int1 = 1;
         int int2 = 11;
@@ -35,14 +35,17 @@ public class TestHarness {
         //Output:[6, 4, 5, 1, 2, 4, 5, 4, 5, 6, 7, 4, 5, 7]
 
         //Exercise 5
-        b = ps.canBalance(input1);
-        System.out.printf("%s\n", b);   
+        //b = ps.canBalance(input1);
+        //System.out.printf("%s\n", b);   
         //Input: {10, 0, 0, -10}
         //Output:true
 
         //Exercise 6
-        //b = ps.linearIn(input1, input2);
-        //System.out.printf("%s\n", b);      
+        b = ps.linearIn(input1, input2);
+        System.out.printf("%s\n", b);   
+        //Input1: {1, 2, 3, 4}
+        //Input2: {2, 4}
+        //Output: true   
 
         //Exercise 7
         //iArr = ps.squareUp(int1);

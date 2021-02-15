@@ -212,7 +212,49 @@ public class ProblemSet10 {
     }
 
     public boolean linearIn(int[] outer, int[] inner) {
-        return false;
+        try {
+            if (outer == null) return false;
+            if (inner == null) return false;
+
+            int lenO = outer.length;
+            int lenI = inner.length;
+
+            if (lenO <= 0) return false;
+            if (lenI <= 0) return false;
+
+            if (!isArraySorted(outer)) return false;
+            if (!isArraySorted(inner)) return false;
+
+            int j = 0;
+
+            for (int i=0; i<lenO; i++)
+                if (j < lenI)
+                    if (inner[j] == outer[i])
+                        j++;
+
+            if (j == lenI) return true;
+            else return false;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean isArraySorted(int[] arr) {
+        try {
+            int len = arr.length;
+
+            for (int i=0; i<len; i++) {
+                if (i < len-1)
+                    if (arr[i] > arr[i+1])
+                        return false;
+            }
+
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     public int[] squareUp(int n) {
