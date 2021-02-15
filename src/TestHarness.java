@@ -13,8 +13,8 @@ public class TestHarness {
         int[] input1 = {1, 2, 1, 4, 5, 2};
         int[] input2 = {1, 2, 3};
 
-        int int1 = -9;
-        int int2 = 4;
+        int int1 = 1;
+        int int2 = 11;
 
         //Exercise 1
         //sArr = ps.fizzBuzz(int1, int2);
