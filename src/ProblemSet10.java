@@ -283,7 +283,27 @@ public class ProblemSet10 {
     }
 
     public int[] seriesUp(int n) {
-        return null;
+        try {
+            if (n < 0) return null;
+
+            int len = (n * (n+1)) / 2;
+            int[] arr = new int[len];
+
+            int k = 0;
+
+            for(int i=0; i<n; i++) {
+                for(int j=0; j<i+1; j++) {
+                        int indx = k + j;
+                        arr[indx] = j + 1;
+                }
+                k += (i + 1);
+            }
+
+            return arr;
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 
     public int maxMirror(int[] numbers) {

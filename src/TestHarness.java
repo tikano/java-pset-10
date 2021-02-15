@@ -13,7 +13,7 @@ public class TestHarness {
         int[] input1 = {1, 2, 3, 4};
         int[] input2 = {1, 4};
 
-        int int1 = 2;
+        int int1 = 8;
         int int2 = 11;
 
         //Exercise 1
@@ -48,12 +48,12 @@ public class TestHarness {
         //Output: true   
 
         //Exercise 7
-        iArr = ps.squareUp(int1);
-        System.out.printf("%s\n", Arrays.toString(iArr));        
+        //iArr = ps.squareUp(int1);
+        //System.out.printf("%s\n", Arrays.toString(iArr));        
 
         //Exercise 8
-        //iArr = ps.seriesUp(int1);
-        //System.out.printf("%s\n", Arrays.toString(iArr));        
+        iArr = ps.seriesUp(int1);
+        System.out.printf("%s\n", Arrays.toString(iArr));        
 
         //Exercise 9
         //i = ps.maxMirror(input1);
