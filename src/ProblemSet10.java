@@ -184,7 +184,31 @@ public class ProblemSet10 {
     }
 
     public boolean canBalance(int[] numbers) {
-        return false;
+        try {
+            if (numbers == null) return false;
+
+            int len = numbers.length;
+
+            if (len <= 0) return false;
+
+            int sumI = 0;
+
+            for (int i=0; i<len; i++) {
+                sumI = sumI + numbers[i];
+                int sumJ = 0;
+
+                for (int j=i+1; j<len; j++)
+                    sumJ = sumJ + numbers[j];
+
+                if (sumI == sumJ)
+                    return true;
+            }
+
+            return false;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     public boolean linearIn(int[] outer, int[] inner) {
