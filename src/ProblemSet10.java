@@ -340,6 +340,29 @@ public class ProblemSet10 {
     }
 
     public int countClumps(int[] numbers) {
-        return -1;
+        try {
+            if (numbers == null) return -1;
+
+            int cnt = 0;
+            int len = numbers.length;
+    
+            for(int i=0; i<len; i++) {
+                int temp = numbers[i];
+                int cLen = 1;
+
+                for(int j=i+1; (j<len && numbers[i+1]==temp); j++) {
+                    i++;
+                    cLen++;
+                }                    
+
+                if (cLen > 1)
+                    cnt++;                    
+            }
+                                                                                                    
+            return cnt;
+        }
+        catch (Exception e) {
+            return -1;
+        }
     }
 }
