@@ -99,7 +99,7 @@ public class ProblemSet10 {
 
             for (int i=0; i<len; i++) {
                 if (numbers[i] == 3) {
-                    int fourIndex = fix34_Find4NotRightNextTo3(numbers);
+                    int fourIndex = findXNotRightNextToY(numbers, 4, 3);
                     
                     if (i < len-1)
                         if (fourIndex != -1) {
@@ -117,12 +117,16 @@ public class ProblemSet10 {
         }
     }
 
-    private int fix34_Find4NotRightNextTo3(int[] numbers) {
+    private int findXNotRightNextToY(int[] numbers, int x, int y) {
         try {
             int len = numbers.length;
 
             for (int i=0; i<len; i++) {
-                if ( (numbers[i] == 4) && (numbers[i-1] != 3) )
+                if (i == 0) {
+                    if (numbers[i] == x)
+                        return i;
+                }
+                else if ( (numbers[i] == x) && (numbers[i-1] != y) )
                     return i;
             }
 
@@ -134,7 +138,49 @@ public class ProblemSet10 {
     }
 
     public int[] fix45(int[] numbers) {
-        return null;
+        try {
+            if (numbers == null) return null;   //The array must not be null
+
+            int cnt4 = 0, cnt5 = 0;
+            int len = numbers.length;
+
+            for (int i=0; i<len; i++) {
+                if (numbers[i] == 4) {
+                    cnt4++;
+
+                    if (i < len-1) {
+                        if (numbers[i+1] == 4)
+                            return null;    //Every 4 has a number after it that is not a 4
+                    }
+                    else
+                        return null;    //4 is a last element; Every 4 has a number after it that is not a 5
+                }                       
+                
+                if (numbers[i] == 5)
+                    cnt5++;
+            }
+
+            if (cnt4 != cnt5)
+                return null;    //There must be an equal number of 4s and 5s in the array
+
+            for (int i=0; i<len; i++) {
+                if (numbers[i] == 4) {
+                    int fiveIndex = findXNotRightNextToY(numbers, 5, 4);
+                    
+                    if (i < len-1)
+                        if (fiveIndex != -1) {
+                            int temp = numbers[i+1];
+                            numbers[i+1] = numbers[fiveIndex];
+                            numbers[fiveIndex] = temp;
+                        }
+                }
+            }
+
+            return numbers;
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 
     public boolean canBalance(int[] numbers) {
