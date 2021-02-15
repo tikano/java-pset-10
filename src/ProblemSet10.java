@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ProblemSet10 {
 
     public static void main(String[] args) {
@@ -33,7 +35,34 @@ public class ProblemSet10 {
     }
 
     public int maxSpan(int[] numbers) {
-        return -1;
+        try {
+            if (numbers == null) return -1;
+            if (numbers.length == 1) return 1;
+            if (numbers.length <= 0) return 0;
+
+            int len = numbers.length;
+            int maxSpan = 0;
+
+            String strNumbers = Arrays.toString(numbers);
+            strNumbers = strNumbers.replace(" ", "").replace(",", "");
+
+            for (int i=0; i<len; i++) {
+                int fOccurance, lOccurance;
+                
+                fOccurance = strNumbers.indexOf(String.valueOf(numbers[i]));
+                lOccurance = strNumbers.lastIndexOf(String.valueOf(numbers[i]));
+
+                int span = (lOccurance - fOccurance) + 1;
+                
+                if (maxSpan < span)
+                    maxSpan = span;
+            }
+
+            return maxSpan;
+        }
+        catch (Exception e) {
+            return -1;
+        }
     }
 
     public int[] fix34(int[] numbers) {

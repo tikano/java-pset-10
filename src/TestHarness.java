@@ -10,7 +10,7 @@ public class TestHarness {
         boolean b = false;
         int i = 0;
 
-        int[] input1 = {1, 2, 1, 4, 5, 2};
+        int[] input1 = {1, 4, 2, 1, 4, 4, 4};
         int[] input2 = {1, 2, 3};
 
         int int1 = 1;
@@ -21,8 +21,8 @@ public class TestHarness {
         //System.out.printf("%s\n", Arrays.toString(sArr)); 
 
         //Exercise 2
-        //i = ps.maxSpan(input1);
-        //System.out.printf("%d\n", i);        
+        i = ps.maxSpan(input1);
+        System.out.printf("%d\n", i);        
 
         //Exercise 3
         //iArr = ps.fix34(input1);
