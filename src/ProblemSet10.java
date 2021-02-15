@@ -232,8 +232,10 @@ public class ProblemSet10 {
                     if (inner[j] == outer[i])
                         j++;
 
-            if (j == lenI) return true;
-            else return false;
+            if (j == lenI) 
+                return true;
+            else 
+                return false;
         }
         catch (Exception e) {
             return false;
@@ -244,11 +246,10 @@ public class ProblemSet10 {
         try {
             int len = arr.length;
 
-            for (int i=0; i<len; i++) {
+            for (int i=0; i<len; i++)
                 if (i < len-1)
                     if (arr[i] > arr[i+1])
                         return false;
-            }
 
             return true;
         }
@@ -258,7 +259,27 @@ public class ProblemSet10 {
     }
 
     public int[] squareUp(int n) {
-        return null;
+        try {
+            if (n < 0) return null;
+
+            int len = n * n;
+            int[] arr = new int[len];
+
+            for (int i=0; i<len; i++)
+                arr[i] = 0;
+
+            if(n == 0)
+                return arr;
+
+            for(int i=n-1; i<len; i=i+n)
+                for(int j=i; j>=(i-(i/n)); j--)
+                    arr[j] = i - j + 1;
+                                    
+            return arr;
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 
     public int[] seriesUp(int n) {
