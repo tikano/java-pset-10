@@ -307,7 +307,36 @@ public class ProblemSet10 {
     }
 
     public int maxMirror(int[] numbers) {
-        return -1;
+        try {
+            if (numbers == null) return -1;
+
+            int maxMirror = 0;
+            int len = numbers.length;
+    
+            for(int i=0; i<len; i++) {
+                for(int j=len-1; j>=0; j--) {
+                    int maxSize = 0;
+                    int maxJ = j;
+                    
+                    for (int maxI=i; (maxI<len && maxJ>=0); maxI++) {
+                        if (numbers[maxI] == numbers[maxJ]) {
+                            maxSize++;
+                            maxJ--;    
+                        }
+                        else
+                            break;
+                    }
+                          
+                    if (maxMirror <= maxSize)
+                        maxMirror = maxSize;                    
+                }
+            }
+                                                                                                    
+            return maxMirror;
+        }
+        catch (Exception e) {
+            return -1;
+        }
     }
 
     public int countClumps(int[] numbers) {

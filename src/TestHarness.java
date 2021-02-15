@@ -10,10 +10,10 @@ public class TestHarness {
         boolean b = false;
         int i = 0;
 
-        int[] input1 = {1, 2, 3, 4};
+        int[] input1 = {7, 1, 2, 9, 7, 2, 1};
         int[] input2 = {1, 4};
 
-        int int1 = 8;
+        int int1 = 3;
         int int2 = 11;
 
         //Exercise 1
@@ -52,12 +52,14 @@ public class TestHarness {
         //System.out.printf("%s\n", Arrays.toString(iArr));        
 
         //Exercise 8
-        iArr = ps.seriesUp(int1);
-        System.out.printf("%s\n", Arrays.toString(iArr));        
+        //iArr = ps.seriesUp(int1);
+        //System.out.printf("%s\n", Arrays.toString(iArr));        
 
         //Exercise 9
-        //i = ps.maxMirror(input1);
-        //System.out.printf("%d\n", i);        
+        i = ps.maxMirror(input1);
+        System.out.printf("%d\n", i);      
+        //Input: {1, 2, 3, 3, 3, 3, 2, 1}
+        //Output:8  
 
         //Exercise 10
         //i = ps.countClumps(input1);
