@@ -79,8 +79,8 @@ public class ProblemSet10 {
                     cnt3++;
 
                     if (i < len-1) {
-                        if (numbers[i+1] == 4)
-                            return null;    //Every 3 has a number after it that is not a 4
+                        if (numbers[i+1] == 3)
+                            return null;    //Every 3 has a number after it that is not a 3
                     }
                     else
                         return null;    //3 is a last element; Every 3 has a number after it that is not a 4

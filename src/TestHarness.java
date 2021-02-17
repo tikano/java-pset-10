@@ -10,7 +10,7 @@ public class TestHarness {
         boolean b = false;
         int i = 0;
 
-        int[] input1 = {1, 2, 2, 3, 4, 4};
+        int[] input1 = {3,4,3,4,3,4,5,4,3,6};
         int[] input2 = {1, 4};
 
         int int1 = 3;
