@@ -293,8 +293,8 @@ public class ProblemSet10 {
 
             for(int i=0; i<n; i++) {
                 for(int j=0; j<i+1; j++) {
-                        int indx = k + j;
-                        arr[indx] = j + 1;
+                    int indx = k + j;
+                    arr[indx] = j + 1;
                 }
                 k += (i + 1);
             }
